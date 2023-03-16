@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>through the years</title>
+</head>
+
+<style>
+  body {
+    background-image: url("https://i.imgur.com/uc0Yewh.png");
+    background-size: 100%;
+    background-repeat: repeat;
+    background-color: #282828;
+  }
+
+  .box {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .box.btn:hover {
+    background-color: black;
+  }
+
+  .box .btn {
+    position: absolute;
+    top: 5%;
+    left: -110%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    scale: 20%
+  }
+</style>
+
+<style>
+  img {
+    height: 5%;
+  }
+</style>
+
+<script>
+  function randomLink(x) {
+    // List of URLs
+    var one = ["https://open.spotify.com/track/7ERZgMLgpVhrp2D6JYy02t?si=72c22407db2d42ca", "https://open.spotify.com/track/3gBE71E0cl8xRZLj8IJIuP?si=64994505121f4cd8", "https://open.spotify.com/track/6SPdaCpTYFe8ay3kdBHVD7?si=3d164fd5f06942b9", "https://open.spotify.com/track/51qnsjPJ9V9ZNoc2bGKaP3?si=4f6831a849014528", "https://open.spotify.com/track/5G2g1EbEtFSMkMbAnhl7FV?si=f498f2acaa014b5f", "https://open.spotify.com/track/1OeLgt3rl1gtWBmzqMXIKs?si=7e3c88b5b22c4317", "https://open.spotify.com/track/7wCmS9TTVUcIhRalDYFgPy?si=a99944cef8a44a12", "https://open.spotify.com/track/4S3XYcZFs6FbsiLwH13Z63?si=b12c6bae5b7e4acc", "https://open.spotify.com/track/6ptzEN5p1hdSxFiLfArq3G?si=1142ca90f69944c4,https://open.spotify.com/track/3TdTQ1Uk8mph3yxYxcsQpI?si=3072ea077b544949", "https://open.spotify.com/track/75liGvzheM6Qkfds1oaSFk?si=32f8b1d9ac584e0c", "https://open.spotify.com/track/2bj4WVLkmUE2sGelMD0a5d?si=71ab1f2967194202", "https://open.spotify.com/track/6uaj6U0RWkjtXnk5550ZTC?si=f73c2454ce1843da"];
+
+    var two = ["https://open.spotify.com/track/00MYbj8WKfcv3Bz6qFhJKn?si=39de58e1cc734d72", "https://open.spotify.com/track/61fUybL3XS40gcffnnNPoX?si=3c6ea7735dd54724", "https://open.spotify.com/track/5smQEb4bp9kYX0xgiGh4Fn?si=ced527593c6e4ea5", "https://open.spotify.com/track/04mlpyRplis2yvf18EwaeN?si=2d7e76a68e474238", "https://open.spotify.com/track/5Za8bsHPb08SZXm0bvbDXy?si=4d2f8159951442ac", "https://open.spotify.com/track/2xQQsFEm7Enrk6fk2KI5C2?si=0916d9f3a8914463", "https://open.spotify.com/track/0YvLVwdVZlnSjqfetfZcEi?si=bb19d57d262c41f8", "https://open.spotify.com/track/3tSmXSxaAnU1EPGKa6NytH?si=8b0127d857164a56", "https://open.spotify.com/track/4rbc5CkMyU3F2kwiZLO2z6?si=41f6d94aa3e54814", "https://open.spotify.com/track/5kBkdxl6uRdwtsGTONJa0z?si=b6edf24be7a44982", "https://open.spotify.com/track/5ZZtBmfSsaIAkx6OZYUWzF?si=64bb4af70d934ad5", "https://open.spotify.com/track/7MfJVe7of8qWEMcCwQnAvS?si=9778e27f5a8a4454"]
+
+    var three = ["https://open.spotify.com/track/2LA4v20vokK9Uaj7WEEMaf?si=049d817b4a0e4d2c", "https://open.spotify.com/track/5xEM5hIgJ1jjgcEBfpkt2F?si=e454ba7ffaa94873", "https://open.spotify.com/track/00Mb3DuaIH1kjrwOku9CGU?si=19e529a612bf44b6", "https://open.spotify.com/track/1jlG3KJ3gdYmhfuySFfpO1?si=b18d483a8b044f5e", "https://open.spotify.com/track/3D3B7vahQasg8rdAYrEbNT?si=e55abf6513bc46ad", "https://open.spotify.com/track/1vjIHlmc4WfIaEl74YAvX0?si=ff7c107ef47f4aa3", "https://open.spotify.com/track/1T0Dv84b0Za7FoLcoeajgh?si=5f49c673d1ea48b6", "https://open.spotify.com/track/6STHWwMa2vbr1nKArQH7hd?si=7bbc0e0cadb042e4", "https://open.spotify.com/track/3nH2w4Q9yths31lC9C26fT?si=78ef88bc5819445c", "https://open.spotify.com/track/2eQMZp4HLfQAX5S7wRuso3?si=84f3f919163f4443", "https://open.spotify.com/track/4UMZpWNYEDT2vVALzWdcCo?si=2323b5122f174df1", "https://open.spotify.com/track/7jgPM1tEs9WNqQ0mYBAvWA?si=bb637c8aac224091", "https://open.spotify.com/track/2zVV1TUD5ymZMJ3JaB8fUu?si=0f3434114891406c"]
+
+    var four = ["https://open.spotify.com/track/7zdORPbuIBkZHCJXl9J2e5?si=325ebd25e0464b1b", "https://open.spotify.com/track/4Pwjz3DfvfQWV0rO2V8jyh?si=9b8e96b2a9c84147", "https://open.spotify.com/track/6fAyRZ0GHuuvSOEIOwi58N?si=ce0e5405954b490e", "https://open.spotify.com/track/2PieESXphabz5AkALFS08X?si=01f3859373a94c3d", "https://open.spotify.com/track/2HbKqm4o0w5wEeEFXm2sD4?si=9a2cda3bb78b4e9d", "https://open.spotify.com/track/1zCi4cVFqe6ja16MeGZKRN?si=456ba6a2b4b34667", "https://open.spotify.com/track/3903Tbix9PdoculpJLikHf?si=52d9e918586f4763", "https://open.spotify.com/track/439TlnnznSiBbQbgXiBqAd?si=9f0bfdae2e2b41ea", "https://open.spotify.com/track/3DFjTEueCBYqg7YE05eUJP?si=11b9337211164820", "https://open.spotify.com/track/0sd6BRTa0O96tfEbFGhJF9?si=9b4e7ae9e77f443d", "https://open.spotify.com/track/7pdCmGogZHZH3Xv7LnqVrH?si=5855bb8f12534e1d", "https://open.spotify.com/track/6q0zsagVIiAn9zb7vqTmZi?si=483153c81da94b17", "https://open.spotify.com/track/7635mlfbjmTS7t17pKtl6r?si=560758249e284732"]
+
+    var five = ["https://open.spotify.com/track/4FkPNu2JHFDJgEsM8y8ve1?si=7ba4dc4ca9854f2f", "https://open.spotify.com/track/5mpLcXEsk3jjzLFGuNKk5I?si=c75528fb45034071", "https://open.spotify.com/track/3Gl2zYelYDlusFWT4QzRsa?si=8a1ec9fb63474664", "https://open.spotify.com/track/2CVeqoap0AwLbdjWr6Rraq?si=bb6fc6e6962e4ddc", "https://open.spotify.com/track/798IyUjOzBkjliWev26j9j?si=3137679875d24468", "https://open.spotify.com/track/2vTURfReWpjb5DBZYqTAs4?si=b4e403a74aff4787", "https://open.spotify.com/track/3T09uysRqZeC0YtM8lgY4J?si=533da82b953f41ae", "https://open.spotify.com/track/7HNpXPaTcX5CoNBjTAEWBr?si=9c2de1c3066a49b2", "https://open.spotify.com/track/5CXuWIwBnyMVmhAtpHBmuO?si=883522b6174941cd", "https://open.spotify.com/track/4F0ptEqZa9ZbTu8t4g5FuR?si=d1dccce455934b4e", "https://open.spotify.com/track/6vECYJHxYmm3Ydt3fF01pE?si=f58c40eef0c34965", "https://open.spotify.com/track/4Cc4KB0pMtAEnGZMN6AHUD?si=f4da53dc615f477b", "https://open.spotify.com/track/09qRkutJtXFjpTDQOftkMg?si=db99c3eaf4db45b9", "https://open.spotify.com/track/7mZE75DBIWmETMRAk7T166?si=1a20301633e24d01"]
+
+    var six = ["https://open.spotify.com/track/0I8x68KiTOvx1VGDJLXzGO?si=1be6b0c3fe934493", "https://open.spotify.com/track/1uFuNLPlEsonEV6rGa0bec?si=cbe8c8f536934a50", "https://open.spotify.com/track/0HgV9VEqSzn09XZPYHlkLK?si=65adcae54e254150", "https://open.spotify.com/track/3l6GcuXk1nPF7uVhQGm5iX?si=3c0e73ebe0044421", "https://open.spotify.com/track/70uQzsAyJ1vmloywhrO0ss?si=b8d83721ad28439e", "https://open.spotify.com/track/70uQzsAyJ1vmloywhrO0ss?si=b8d83721ad28439e", "https://open.spotify.com/track/3W6T9czNy1ZCOwHVq8keWb?si=46fce47799174e31", "https://open.spotify.com/track/16qh2Xmo8wvvNZoAa55XIn?si=81a4cb4fe16646de", "https://open.spotify.com/track/1qFWOGLf8rX2lOLrR9wicN?si=d36c9cb5e2d04838", "https://open.spotify.com/track/1YsqCyZdwBX2PriZAP1T88?si=af65baa29a9644ab", "https://open.spotify.com/track/4beQ25DThlTseKOWWQRElz?si=487f17aece0b4dfe"]
+
+    var seven = ["https://open.spotify.com/track/6ouQW2sUweAmRKeYcvSyrC?si=d900a428ee604b68", "https://open.spotify.com/track/499SvLeXfMRLhi6BSrPU3Y?si=e4bfa6b4180a4b77", "https://open.spotify.com/track/5DTkgvkFzbpwOX0WlWIH8Z?si=b7f662c43ebd41e3", "https://open.spotify.com/track/0SRaDY4S9Xv5aO3iUkk7Xe?si=ae42b5be73e14555", "https://open.spotify.com/track/11iIikXxC6NP0Ma8vMD27x?si=83588a0150ba4d8a", "https://open.spotify.com/track/5GCVqaPokLlyUp9QiTidpU?si=5f14d03de8844c0b", "https://open.spotify.com/track/5vE1P4pBt60scQarkVblKS?si=566f90a0ec284cbc", "https://open.spotify.com/track/5Tf1BtJ5v5PebDYSwQXGFv?si=a6f257f87da44eca", "https://open.spotify.com/track/2feFtAzF0r40GpVGNvlnGl?si=90ac0dbf256a410a", "https://open.spotify.com/track/6SHTRuxHS9pM3BJsTn4PcU?si=2c0a0afc88304cd4"]
+
+    var eight = ["https://open.spotify.com/track/1ucnuV88gFTfR3BalmznDk?si=055b995172804dd0", "https://open.spotify.com/track/7tKbr7B4PH0zRLOqgcMoch?si=1293d29885fe4238", "https://open.spotify.com/track/6q4zA7hWKFF6wsJ64DWdwU?si=132d9ed0e1274f9a", "https://open.spotify.com/track/7sdgYqhFhYJqdD1tSIaSLu?si=08f1f74c806c4ff2", "https://open.spotify.com/track/22oSqf2mvB0ODXcIZfuhP6?si=5df0973fa2db45e1", "https://open.spotify.com/track/7uqzNLteapYGpd1KFQKCeD?si=a983d98aacf54dd6", "https://open.spotify.com/track/1WrUjONaFdQOjysNUnJBCl?si=61f5982238344297"]
+
+    var nine = ["https://open.spotify.com/track/2YSgnpegXNXgk8UxgG8znT?si=a48e7ec255f842eb", "https://open.spotify.com/track/3u49n658xRS0pjHxHFRkOf?si=255fc70fd9a44c8d", "https://open.spotify.com/track/60eOMEt3WNVX1m1jmApmnX?si=4d050cd5e6944b77", "https://open.spotify.com/track/6QgjcU0zLnzq5OrUoSZ3OK?si=bbb520949f5f46df", "https://open.spotify.com/track/18admrko96XeSCmgD76wlM?si=0bffab0ef14b4bb2", "https://open.spotify.com/track/4wnqFGTV4268VQgCG1jn7J?si=53d0f08decc047d5", "https://open.spotify.com/track/4SNtyKNyYJ8ERT7YLlnFBr?si=d4a9cfd723294301", "https://open.spotify.com/track/4IDqtpOM4wvEi4tktYprdd?si=26de2850ca784d8f", "https://open.spotify.com/track/384TqRlwlMfeUAODhXfF3O?si=cd9e4a8a92da4ef1", "https://open.spotify.com/track/6E69aBnq0hr6cTGBo39cWD?si=5d13499ddf89490b"]
+
+    var ten = ["https://open.spotify.com/track/7fRfIvHPH6bHdMDjPFwTMh?si=83b9fc11293843c4", "https://open.spotify.com/track/7cGFbx7MP0H23iHZTZpqMM?si=1bf218dfdba04d7d", "https://open.spotify.com/track/58kwvMXeOlsvzPqUlyj75Y?si=0a87844db7f2478a", "https://open.spotify.com/track/6OQea06z3cbOqYgG2O6eOZ?si=cfc17aaaa979437a", "https://open.spotify.com/track/6HN5XPJEV31RQJGoyqZ81K?si=68835406128d4e40", "https://open.spotify.com/track/77mLzdHEWRB60CLlV02TV2?si=43c6bfcf837f496a", "https://open.spotify.com/track/732btJLGu7gYNHHNdzshrG?si=0c498b35155347c2", "https://open.spotify.com/track/53LkLW4k4w7EOayzvx70O9?si=4efa439ab4174d80", "https://open.spotify.com/track/4GP2Idcs08NqAjfEV0rsl6?si=2ffd1e4310ec44d8", "https://open.spotify.com/track/5tz69p7tJuGPeMGwNTxYuV?si=17f6264202684223", "https://open.spotify.com/track/6CvTbrBxxc5jFwqsivhpxh?si=11e3a5d97a604fa6", "https://open.spotify.com/track/7BKUWh5sdtdS17crohRe4L?si=68b0b081d9254b5f", "https://open.spotify.com/track/76ZrqdtkKxhMl42xAQTnFm?si=548a57b9b2a44f10"]
+
+    var eleven = ["https://open.spotify.com/track/7zFXmv6vqI4qOt4yGf3jYZ?si=9ca12ed5214b4b0b", "https://open.spotify.com/track/1RMJOxR6GRPsBHL8qeC2ux?si=1cf1ac6b34ba46b5", "https://open.spotify.com/track/1Mza2sr6tPhy6jjI3HB9fW?si=ddb5be734ccc48c0", "https://open.spotify.com/track/3SPfACAarZmNEF45erapCY?si=889e46a2f49c4b1f", "https://open.spotify.com/track/59acp1OhcvxwVBwQJBYKuX?si=cb42cc279efd4988", "https://open.spotify.com/track/1TPLsNVlofwX1txcE9gZZF?si=ef1053d41b2d497a", "https://open.spotify.com/track/0KyzXQhY2yzcb1FYCHkZc2?si=c093e6d5a35e4bae", "https://open.spotify.com/track/3E895HtTn6lB40SA0l9EkL?si=727dce1d62614cec", "https://open.spotify.com/track/1jQfgl9WRle7D8a3GXLwaD?si=57805544fb2549a7", "https://open.spotify.com/track/4nESnAOALHmxg8UFCCtXhO?si=10ddeae7e73d4010"]
+
+    var twelve = ["https://open.spotify.com/track/7AcGFRQPq3kNArX1RU3cPM?si=4a56371e41174321", "https://open.spotify.com/track/2DIFiLjzVxSUc7YY2k7WDA?si=1fade702b8464cdd", "https://open.spotify.com/track/3xbUCRFut7tzBoD2F8L56y?si=e2d4c5e5098d48fc", "https://open.spotify.com/track/2y1NlQ3jhmmvtybRBLQGXm?si=f9bb0313ca234b62", "https://open.spotify.com/track/4xU4wWPzUNlQgTfaKCcheW?si=7982fb31e2fc4d0b"]
+
+    var thirteen = ["https://open.spotify.com/track/5743xMYXTQJvCIIiSRTXTZ?si=72976d153fa9485f", "https://open.spotify.com/track/4IWBM3QbriYkFLVrIBAHwx?si=15847a3dbff74f42", "https://open.spotify.com/track/7yKRfKppKVW3MdhRbGHtI0?si=cfb06c9c98b94fd2", "https://open.spotify.com/track/2dua8jWJY9wZ0y5Y5I7bhG?si=ca71d63e2b664dad", "https://open.spotify.com/track/6pPPm7T9JJOGdfjCTct54l?si=1a5a4b062920484f", "https://open.spotify.com/track/5b7dneE3n3E6STLGvTbqbr?si=095f0a59e8be4b22", "https://open.spotify.com/track/7EkMIQ2PzEzwQroLl6dUvw?si=e1d88ee40cd24a19", "https://open.spotify.com/track/3jZihewg1kioufCyUKhm7w?si=23e3b43d4fa44058", "https://open.spotify.com/track/1C0wUTyX5wZA4AbZaZfZAB?si=968d8fdfc5164cf6", "https://open.spotify.com/track/35PyN97gilboEXCn2HdzQa?si=b35901ff005a4c41", "https://open.spotify.com/track/3qXvTE8lZCCO5192IBxRwB?si=958e1e1253184ebf", "https://open.spotify.com/track/4z3eCIpMNMqy02VbRaWTRz?si=e765050b4a934280", "https://open.spotify.com/track/7siokedVFaQOmRvAIwdmML?si=f107992e0e6742d7"]
+
+    var fourteen = ["https://open.spotify.com/track/2t8yVaLvJ0RenpXUIAC52d?si=812cb76d4ac64986", "https://open.spotify.com/track/5ZSIExfQuVv69tw5Qw3yDl?si=1f42871470f94284", "https://open.spotify.com/track/6ho88pvz4c8WCSFbdVXNia?si=a275b5fcffe54f5b", "https://open.spotify.com/track/0ZKKJTv21zJpNrKiL0LYyV?si=c67d2cb8ff36499e", "https://open.spotify.com/track/4f1XXGjZZ9EkFkrbPJek6X?si=76ae526f9a314bf1", "https://open.spotify.com/track/2wOXxtHZgRkkrkEbKLzzqs?si=d469839ad0b74886", "https://open.spotify.com/track/4paAidoE8VAemwU4jgCc6l?si=6159a708667b4cfe", "https://open.spotify.com/track/0hPLZrnDgtKxrym1BHjDhd?si=fbcb41aa47fe4b96", "https://open.spotify.com/track/2QgfDF0fQ4sskDthP8MG5w?si=55ac8906c3664191", "https://open.spotify.com/track/50a8bKqlwDEqeiEknrzkTO?si=e37711932ffc4389", "https://open.spotify.com/track/2LqoYvMudv9xoTqNLFKILj?si=1e49ba9070e44e57", "https://open.spotify.com/track/5stbfxsPi8gcOH2LCuA4Le?si=661cce4f30d54f45", "https://open.spotify.com/track/2FUNBaa5DwItJtYEBgAblU?si=30330d6172e14fbf", "https://open.spotify.com/track/55xNjVrGJxgqcEFqCyejTM?si=48db28ebf1c74809", "https://open.spotify.com/track/1uULQtJ8rbsX5TwjPpPc9Q?si=e3e8339f169a4449"]
+
+    var fifteen = ["https://open.spotify.com/track/5aqu5xhPqoOWqF71PkfgM8?si=33abd72ada3b4f4f", "https://open.spotify.com/track/0rKtyWc8bvkriBthvHKY8d?si=87721c3c485f4796", "https://open.spotify.com/track/1DMEzmAoQIikcL52psptQL?si=450a7ba712ef4d94", "https://open.spotify.com/track/0Y9D1Bc4fAkeZnVsGKdij6?si=168c9f4cbb124588", "https://open.spotify.com/track/39oeKRgsLeynDIbWuXyA47?si=3177155abe5744b4", "https://open.spotify.com/track/1VGzxJnVQND7Cg5H5wGj14?si=80c74b58deb748b3", "https://open.spotify.com/track/1X8YgRhzbdXb1vZNLUTn9g?si=a5b15e6adfa54652", "https://open.spotify.com/track/4sbtM9ORGwmxGkXfctXbJq?si=cc7594b9636f407f", "https://open.spotify.com/track/48x8fBWfyeSMzLl5gbsjr9?si=0e8bd97c62c548a7", "https://open.spotify.com/track/4wJ8dJKBAxdDe5cUx8K779?si=f6c97960bf0441a7", "https://open.spotify.com/track/0qpSvzE0Rws3gVZNZCf04v?si=5e781cde346149a1", "https://open.spotify.com/track/606F3qdYCXtDVtKN53YsuW?si=98392cb257dc41e5"]
+
+    var sixteen = ["https://open.spotify.com/track/694vvR5o19xHPhhJ5QdLN7?si=8d73253a02d04559", "https://open.spotify.com/track/6U0FIYXCQ3TGrk4tFpLrEA?si=ff733120acb84e84", "https://open.spotify.com/track/6e7hIhOLH9zvb3zP5O5gt0?si=93d42be209254ce2", "https://open.spotify.com/track/5SecO8b3bvFNBTtrTyt91o?si=da4b2d89ed774e60", "https://open.spotify.com/track/3wE9jU1zReHLMHLgAsWIYX?si=177901bffa9d4586", "https://open.spotify.com/track/56IGGA6VwAbIni6KoN7VC5?si=4ed30d4666af4da8", "https://open.spotify.com/track/7HuaFNJNNgLmk1WTSigmhi?si=39455e787e28431a", "https://open.spotify.com/track/7frG49GBDHPPvxXRVLRwle?si=db1b82114ff143dc", "https://open.spotify.com/track/1Uo7reO6I2yQ1q36ZPuNf7?si=4a97fd2fc3a444f6", "https://open.spotify.com/track/2YaNOzEvmqOXzAsMNHjD6B?si=bd25b0fbecfd442a", "https://open.spotify.com/track/41PCkAcfU1UiSKUDtt6tXQ?si=f31d505861b7410c", "https://open.spotify.com/track/2m4j9Z2XCxhRppNu94fMo5?si=16a72f1b3d7c4a64"]
+
+    var seventeen = ["https://open.spotify.com/track/4IoZsHSnqGbTHbIg85gdOM?si=13c9fd142e03471f", "https://open.spotify.com/track/5f2JNWZKJMZEgkRJc9MCTv?si=7e14d01ba18b47f7", "https://open.spotify.com/track/1Rz26pUeTod1l0Eh6af7Dc?si=9cd31495c0ef48a2", "https://open.spotify.com/track/57l8DihxRmisuf475H7RnO?si=e996c7d7a3044073", "https://open.spotify.com/track/4eEYCyqbteEfdM33SwipfS?si=897bbffb98fa4356"]
+
+    var eighteen = ["https://open.spotify.com/track/1USmtE51vGpOJmX1TKL7gM?si=93a4231c5cea4944", "https://open.spotify.com/track/4FDIfWAarE9CMspqBQGYs9?si=2d1896dfcd584d2a", "https://open.spotify.com/track/6N6iMA1toakncEnpNC8o8J?si=92bd805f473d47dd", "https://open.spotify.com/track/6TeLt6AjyPI4djQIpXPPXO?si=8ed06514cb2f42b9", "https://open.spotify.com/track/4hSWGJS9RE8ykSnwOrj6Zr?si=c525f7daaaa34a53", "https://open.spotify.com/track/1v5ZCYyeIRFdbZ2EHFIDYC?si=260b043e47a14ee2", "https://open.spotify.com/track/7wAm1vdtx0EdnixnmW7sr7?si=c00de8a2ffda470e", "https://open.spotify.com/track/1LATeRo613o4BuDctvZLzH?si=09921a0c00d74f96", "https://open.spotify.com/track/43zKhi06XrVs2oRAPLKoHo?si=d3371d6ad2bb4b06", "https://open.spotify.com/track/5UCmM6n4zerRlNQ5C3fJxz?si=a1c26ee6c8d64797", "https://open.spotify.com/track/4X7sPYRNdsVCR72UcvVwc4?si=a414700febd64ed8"]
+
+    var nineteen = ["https://open.spotify.com/track/51RN0kzWd7xeR4th5HsEtW?si=08eea94783464088", "https://open.spotify.com/track/5hVghJ4KaYES3BFUATCYn0?si=b0449afe44c143bd", "https://open.spotify.com/track/4f8Mh5wuWHOsfXtzjrJB3t?si=7c5f750f7bbe4785", "https://open.spotify.com/track/5e4LIAQI0bClLazNf2gZV0?si=9b3b3769288c4e6c", "https://open.spotify.com/track/5QvBXUm5MglLJ3iBfTX2Wo?si=7a11734deac54b4c", "https://open.spotify.com/track/0fv2KH6hac06J86hBUTcSf?si=74e54475cfef429c", "https://open.spotify.com/track/1nXZnTALNXiPlvXotqHm66?si=5eaebb77cfce44a5", "https://open.spotify.com/track/0wEC0GNF74lAqrEFZJMl1m?si=63354fa196904c0f", "https://open.spotify.com/track/6bOkaEXc5CopinGazSLokx?si=d767fbadd61c48bc", "https://open.spotify.com/track/1hz7SRTGUNAtIQ46qiNv2p?si=4c513ec3802a410b", "https://open.spotify.com/track/5A0M6B0RBSXSNWv0wcppZ9?si=d460380bbe304e89", "https://open.spotify.com/track/5TxRUOsGeWeRl3xOML59Ai?si=1aaf530f10964835"]
+
+    var twenty = ["https://open.spotify.com/track/3qKmWo8z1KZx9s99a1qiff?si=c5ea707266684f6b", "https://open.spotify.com/track/1AQajAO4Xe6ypAJ7EIkUn6?si=6019810aa1054e89", "https://open.spotify.com/track/3UXtVbSwC559bFYoVRWUXl?si=8d38c04a1b1442a1", "https://open.spotify.com/track/4fIQLVKeE2xaLI6TwxSQfJ?si=6b8902d882824780", "https://open.spotify.com/track/2zVgPURwEBzRhmvoO8GyO4?si=932d9bf765c24098", "https://open.spotify.com/track/519nSwwD1B5g1nw4iZkqsh?si=3d5fdec0e38c40ed", "https://open.spotify.com/track/0voDEdY9CYplIruzcJa4JO?si=a3bc0ef5d2bd41ac", "https://open.spotify.com/track/3omcH1HGghFtzaFGgazoy8?si=97a156ce22e24ae6", "https://open.spotify.com/track/6J9UUQSQ9Vm9fh6vZgLlzu?si=64a33e98a3cf4828", "https://open.spotify.com/track/6DwJfXJjz9HMqjGkQJRwyJ?si=d7ee38207ac24880"]
+   
+    var twentyone = ["https://open.spotify.com/track/4jXl6VtkFFKIt3ycUQc5LT?si=d41c44a4cb8a4dc8", "https://open.spotify.com/track/3WfSNAoj2D8C9noPSGZZFM?si=b434dfabb059463d", "https://open.spotify.com/track/2hwOoMtWPtTSSn6WHV7Vp5?si=80409af9320a45e3", "https://open.spotify.com/track/1DWZUa5Mzf2BwzpHtgbHPY?si=958fddb2274b4b10", "https://open.spotify.com/track/3R8CyhJfVjvgIROd5RSGhQ?si=86b9f26ec33a424c", "https://open.spotify.com/track/1OuN92HcVG6NVpWbeESNB3?si=808115dbb87e44ef", "https://open.spotify.com/track/3Qa944OTMZkg8DHjET8JQv?si=3a67e9c2c422494b", "https://open.spotify.com/track/2Yv2mHzr5AQavVdwQjEokV?si=ef3a941e67f5403c", "https://open.spotify.com/track/0udOCZp7yk0Ml92C0k8H8D?si=0868fe39e33c4aa8", "https://open.spotify.com/track/6CrnvqCxBKVWahSiQwOesM?si=e3bc4e7450344503", "https://open.spotify.com/track/1kwnxJNVl7cwcU98RvMBaR?si=943ba161daa54207", "https://open.spotify.com/track/26G5nmIx7Yvq79bIIluyZV?si=cd45c63bc9c24d65"]
+
+    var twentytwo = ["https://open.spotify.com/track/4krIATG9Lv4A2HEsQ0BYOi?si=7ba2868580c04fc5", "https://open.spotify.com/track/2DcPYCVpC9QQDpLhNljsCv?si=4a085db9cc7e489b", "https://open.spotify.com/track/09rGb6HQEn9HDQFeKND3MN?si=b60869b9dfcf49dd", "https://open.spotify.com/track/5hijVhJGmtUJcTF42POBpJ?si=d21b4bd00e284859", "https://open.spotify.com/track/2RXKLcCCxS0Ij0E0FT1t2A?si=b4c8219b29b14f88", "https://open.spotify.com/track/7BJRNJIcx6G3WuNk436rQn?si=28d25be8e3c446ea"]
+
+    var twentythree = ["https://open.spotify.com/track/5oO4wSJHdDMAtuHqpnNuwz?si=5fa72531d90c4179", "https://open.spotify.com/track/3SpRtNO7GKWaFyWydXArvn?si=20b9cd2094c64f0b", "https://open.spotify.com/track/4kFHZepxfNcgnR5TzY2Eqx?si=a23ee4a7121c42fe", "https://open.spotify.com/track/495p4HdTEzWJ7CkLYD51wO?si=8b21debcaf9c41c4", "https://open.spotify.com/track/2j5QfEI6gsUQytgmbrxuEW?si=b7d480b396444d33", "https://open.spotify.com/track/1LWYInY2Cl77jqgF4U1CJd?si=6c1c8c49ad554c50", "https://open.spotify.com/track/5TQZVwKFbGu7oqhT9J3OLf?si=8d8b7cd1399e4d18"]
+
+    var twentyfour = ["https://open.spotify.com/track/7bjNmIrstK9rUA5oYzabv8?si=d9b0c52f54c8419c", "https://open.spotify.com/track/46Q2ekN2VAXOLTCOfSizLu?si=726f39763c2b4dcd", "https://open.spotify.com/track/2A4h80LMeI4pHiTf4vTrli?si=527d415f68c84228", "https://open.spotify.com/track/1dYuIEDTaayOQI4KfU95Uo?si=f36fde8bc1604ee8", "https://open.spotify.com/track/5qV0c0qD5gFjqrWaMphjW6?si=3203cb1605bc4367", "https://open.spotify.com/track/4QknFsLdkaC1otNfrEkN4z?si=be4872d9c0054523", "https://open.spotify.com/track/4SzsM9m2DRmh1PrDstow8Y?si=6b83270f5aae4b9e", "https://open.spotify.com/track/5S9AqRszdc5WvIu45SzMSQ?si=fef6e23dfd0441ec", "https://open.spotify.com/track/1zrpHdi2ErqTtoErjiByAo?si=3c9daa53f0b04888", "https://open.spotify.com/track/5ruOqrRWsk5pT9WpXZPAh2?si=a88b56c957a44ee0"]
+
+    var twentyfive = ["https://open.spotify.com/track/5PLsAMyBRTqWP24i8Fi5Gu?si=acdf97270b3f4d09", "https://open.spotify.com/track/1W1fTA8eoQ7SwlWaQc2iTK?si=7cd5ffd8668f4946", "https://open.spotify.com/track/3OnhO4po4yLW2uNoiKGUYX?si=3ec8a8f71c80489b", "https://open.spotify.com/track/6JdsPCckuimQaRQgDhTpB9?si=d05c538160d34d61", "https://open.spotify.com/track/6QL39n47cRewKHOnp831iC?si=d3e0c4b982f14dab", "https://open.spotify.com/track/7c4CjosJkEQKk83B1v0gfs?si=09833acee5da41ba", "https://open.spotify.com/track/2XTKStvcXUSEgDvXkBcKep?si=4deafb0ce1f3469e", "https://open.spotify.com/track/1ZTR66zXVjVEwsVmVE9i6o?si=e8ff1fcce9ff452d"]
+
+    var twentysix = ["https://open.spotify.com/track/7CHZvoQLLL4h2OTAjBPQuu?si=c2ab2608337d45f7", "https://open.spotify.com/track/00O3poKaow6qtJlPp2jAwp?si=72adfdecfdd04324", "https://open.spotify.com/track/4tudiljnBgyqnCBZgdgH8A?si=bd3a745078fe40f4", "https://open.spotify.com/track/4E6RRv2D91G1P665WSBADB?si=d5621cf1d6724c38"]
+
+    var twentyseven = ["https://open.spotify.com/track/12JqrM1TeX5yQF7jUN7xux?si=eaa9d320123244dd", "https://open.spotify.com/track/65LEKygSc55ARnywmjeX4m?si=0cc4725470c14394", "https://open.spotify.com/track/3WmFOAs5gM4ArO4AuyDSgG?si=c32e96d7a45544f5", "https://open.spotify.com/track/7AuA1VrPrw2PZ3xjt9QPLl?si=c6f5ff5659374ac1", "https://open.spotify.com/track/5etQimeo6bWdmN1RDskj1W?si=c5d230b9a6b847c4", "https://open.spotify.com/track/3crh2I6JKsqYZq6e2xp4sh?si=1eeafce770b34633", "https://open.spotify.com/track/1DINiZsGmoRgMrA2rGjNbA?si=32f805345d4149d9", "https://open.spotify.com/track/1fIEbOgbgU7Lb4WTUAGTZY?si=ae1819ce01ad435e", "https://open.spotify.com/track/3J0Wy9zdigVOZHPNzSP4tA?si=642194d47c4e4dfc", "https://open.spotify.com/track/0Jqa5orEX6Wy7Nc2rURGAC?si=d4de571b08824fba", "https://open.spotify.com/track/7bJyoLFDXawi41uGcUPHWA?si=e8f437676f99439b"]
+
+    var twentyeight = ["https://open.spotify.com/track/3KCxuTtC6YL7IsmDXTkN13?si=98aaa946b22d4a02", "https://open.spotify.com/track/0dbC9IlWmiK9EbiVHINwpC?si=e6afee5a6a0340f4", "https://open.spotify.com/track/74NhS0Q3RvwqCohsBS7Emr?si=7e10b7f01f4540eb", "https://open.spotify.com/track/3hIwiaOZbGsjCtKJpV4M5b?si=9a402fc953464f89", "https://open.spotify.com/track/0azvRr7z1MgdOF7rnzbUDk?si=59066316996f4a2d", "https://open.spotify.com/track/2syfh4BA4ipxYWZkHiyYgj?si=d90048a28fad4fca", "https://open.spotify.com/track/6xFDa84aiINK5ZeCn16KAm?si=11c3e9d11aa64778", "https://open.spotify.com/track/3MIapMgux77HYyou6TuZUe?si=12005831a910487f", "https://open.spotify.com/track/2LrcmqahxllHq1vdbi43sx?si=51367a6a164b4e41"]
+
+    var twentynine = ["https://open.spotify.com/track/6OckTB2amWc3Jfa47Zg01U?si=21ae4493981a478c", "https://open.spotify.com/track/5OGQu5yBnPO8nEvUgZMaPE?si=5eaf44f73e8c4920", "https://open.spotify.com/track/4ebTZAimq1MCstZnDF5ySR?si=3e9b228b874343e4", "https://open.spotify.com/track/4dtyZgT2dK75eUFGXXn1We?si=b91bdc8879264d36", "https://open.spotify.com/track/1cL6TbvSetesPO39mhAToL?si=19c96733146f470b"]
+
+    var thirty = ["https://open.spotify.com/track/2HnZ0YqhP2BxYQUhCd9Zov?si=d95b2fed9c01472e", "https://open.spotify.com/track/0P4OHmZ7t092na79ElH7F5?si=236df3ef438e4fc5", "https://open.spotify.com/track/12UQIJePnGeLmpVReYpG2w?si=a58c028271374344", "https://open.spotify.com/track/4Gy8ZglxsvsIX04R5PWY7U?si=7a89eb4be2b744c2", "https://open.spotify.com/track/0SIrEgMzTSWzFoT272mk2X?si=315492dab14a4a60", "https://open.spotify.com/track/41P6Tnd8KIHqON0QIydx6a?si=8cfe8e0cef53460f", "https://open.spotify.com/track/77cuLtsUljaHBNpG89GpqE?si=e20cd80019094b3c", "https://open.spotify.com/track/4tf04WrZTy60CawyvueIdK?si=794a871c8b8b4b46", "https://open.spotify.com/track/2qkb3hhx8iCBvYzX9SvVxj?si=dae376dbe1e54d7c", "https://open.spotify.com/track/2VL573wd9nlqXYHaQoFXfV?si=98cea7df2c274742", "https://open.spotify.com/track/4Bg0jUvMb30sfvAeqcSnaz?si=edfcbc836a8149e8", "https://open.spotify.com/track/60aYO1uRqTkGltYtaMFPxy?si=666d7e3eea5d4e00", "https://open.spotify.com/track/2pm4A5nkkA8Cf4NcFEUzVE?si=1ebe5e202cd448f0", "https://open.spotify.com/track/68SSN8C0cJmUEXJkGyNYqe?si=dba58766fbb74b38"]
+
+    var thirtyone = ["https://open.spotify.com/track/2XynYulas10Wmef4Gqrxw9?si=1682b0c2eb054d53", "https://open.spotify.com/track/6nFtk07tmeeRRAnLKaKgJu?si=942d267039c64337", "https://open.spotify.com/track/09oBa0kGySFF0BsJldv6Go?si=22732262f64b4b7f", "https://open.spotify.com/track/4S7y7SiS4tPdvoiemgV8vG?si=b4f13ca5567b44e7"]
+
+    // Pick a random link
+    switch (x) {
+      case 1:
+        var randomIndex = Math.floor(Math.random() * one.length);
+        var randomLink = one[randomIndex];
+        break;
+      case 2:
+        var randomIndex = Math.floor(Math.random() * two.length);
+        var randomLink = two[randomIndex];
+        break;
+      case 3:
+        var randomIndex = Math.floor(Math.random() * three.length);
+        var randomLink = three[randomIndex];
+        break;
+      case 4:
+        var randomIndex = Math.floor(Math.random() * four.length);
+        var randomLink = four[randomIndex];
+        break;
+      case 5:
+        var randomIndex = Math.floor(Math.random() * five.length);
+        var randomLink = five[randomIndex];
+        break;
+      case 6:
+        var randomIndex = Math.floor(Math.random() * six.length);
+        var randomLink = six[randomIndex];
+        break;
+      case 7:
+        var randomIndex = Math.floor(Math.random() * seven.length);
+        var randomLink = seven[randomIndex];
+        break;
+      case 8:
+        var randomIndex = Math.floor(Math.random() * eight.length);
+        var randomLink = eight[randomIndex];
+        break;
+      case 9:
+        var randomIndex = Math.floor(Math.random() * nine.length);
+        var randomLink = nine[randomIndex];
+        break;
+      case 10:
+        var randomIndex = Math.floor(Math.random() * ten.length);
+        var randomLink = ten[randomIndex];
+        break;
+      case 11:
+        var randomIndex = Math.floor(Math.random() * eleven.length);
+        var randomLink = eleven[randomIndex];
+        break;
+      case 12:
+        var randomIndex = Math.floor(Math.random() * twelve.length);
+        var randomLink = twelve[randomIndex];
+        break;
+      case 13:
+        var randomIndex = Math.floor(Math.random() * thirteen.length);
+        var randomLink = thirteen[randomIndex];
+        break;
+      case 14:
+        var randomIndex = Math.floor(Math.random() * fourteen.length);
+        var randomLink = fourteen[randomIndex];
+        break;
+      case 15:
+        var randomIndex = Math.floor(Math.random() * fifteen.length);
+        var randomLink = fifteen[randomIndex];
+        break;
+      case 16:
+        var randomIndex = Math.floor(Math.random() * sixteen.length);
+        var randomLink = sixteen[randomIndex];
+        break;
+      case 17:
+        var randomIndex = Math.floor(Math.random() * seventeen.length);
+        var randomLink = seventeen[randomIndex];
+        break;
+      case 18:
+        var randomIndex = Math.floor(Math.random() * eighteen.length);
+        var randomLink = eighteen[randomIndex];
+        break;
+      case 19:
+        var randomIndex = Math.floor(Math.random() * nineteen.length);
+        var randomLink = nineteen[randomIndex];
+        break;
+      case 20:
+        var randomIndex = Math.floor(Math.random() * twenty.length);
+        var randomLink = twenty[randomIndex];
+        break;
+      case 21:
+        var randomIndex = Math.floor(Math.random() * twentyone.length);
+        var randomLink = twentyone[randomIndex];
+        break;
+      case 22:
+        var randomIndex = Math.floor(Math.random() * twentytwo.length);
+        var randomLink = twentytwo[randomIndex];
+        break;
+      case 23:
+        var randomIndex = Math.floor(Math.random() * twentythree.length);
+        var randomLink = twentythree[randomIndex];
+        break;
+      case 24:
+        var randomIndex = Math.floor(Math.random() * twentyfour.length);
+        var randomLink = twentyfour[randomIndex];
+        break;
+      case 25:
+        var randomIndex = Math.floor(Math.random() * twentyfive.length);
+        var randomLink = twentyfive[randomIndex];
+        break;
+      case 26:
+        var randomIndex = Math.floor(Math.random() * twentysix.length);
+        var randomLink = twentysix[randomIndex];
+        break;
+      case 27:
+        var randomIndex = Math.floor(Math.random() * twentyseven.length);
+        var randomLink = twentyseven[randomIndex];
+        break;
+      case 28:
+        var randomIndex = Math.floor(Math.random() * twentyeight.length);
+        var randomLink = twentyeight[randomIndex];
+        break;
+      case 29:
+        var randomIndex = Math.floor(Math.random() * twentynine.length);
+        var randomLink = twentynine[randomIndex];
+        break;
+      case 30:
+        var randomIndex = Math.floor(Math.random() * thirty.length);
+        var randomLink = thirty[randomIndex];
+        break;
+      case 31:
+        var randomIndex = Math.floor(Math.random() * thirtyone.length);
+        var randomLink = thirtyone[randomIndex];
+        break;
+    }
+
+    // Redirect to the random link
+    window.location.href = randomLink;
+  }
+</script>
+
+<body>
+  <div class="container">
+    <img src="https://i.imgur.com/B4w7Tzv.png" style="scale: 90%">
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/26Jpedp.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(1)">
+        <img src="https://i.imgur.com/Omi5Cfn.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/e8FY4cs.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(2)">
+        <img src="https://i.imgur.com/IRWii4Y.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/WpG2hWK.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(3)">
+        <img style="top:0%" src="https://i.imgur.com/Omi5Cfn.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/yBn9Gg0.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(4)">
+        <img style="top:0%" src="https://i.imgur.com/IRWii4Y.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/a3ZJiRf.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(5)">
+        <img style="top:0%" src="https://i.imgur.com/Omi5Cfn.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/SUegf3J.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(6)">
+        <img style="top:0%" src="https://i.imgur.com/Omi5Cfn.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/55Z0jyu.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(7)">
+        <img style="top:0%" src="https://i.imgur.com/IRWii4Y.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/lhClgPU.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(8)">
+        <img style="top:0%" src="https://i.imgur.com/Omi5Cfn.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/vsoaD2m.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(9)">
+        <img style="top:0%" src="https://i.imgur.com/Omi5Cfn.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/G37Y9ME.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(10)">
+        <img style="top:0%" src="https://i.imgur.com/Omi5Cfn.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/atFjwWU.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(11)">
+        <img style="top:0%" src="https://i.imgur.com/Omi5Cfn.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/gIpHc1l.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(12)">
+        <img style="top:0%" src="https://i.imgur.com/IRWii4Y.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/rKW2Wzu.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(13)">
+        <img style="top:0%" src="https://i.imgur.com/Omi5Cfn.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/G015XDu.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(14)">
+        <img style="top:0%" src="https://i.imgur.com/Omi5Cfn.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/vR3QOKO.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(15)">
+        <img style="top:0%" src="https://i.imgur.com/Omi5Cfn.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/WqDgd3y.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(16)">
+        <img style="top:0%" src="https://i.imgur.com/Omi5Cfn.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/dKplp04.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(17)">
+        <img style="top:0%" src="https://i.imgur.com/IRWii4Y.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/2xB697c.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(18)">
+        <img style="top:0%" src="https://i.imgur.com/IRWii4Y.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/PzBYrBs.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(19)">
+        <img style="top:0%" src="https://i.imgur.com/IRWii4Y.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/7v4bhYI.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(20)">
+        <img style="top:0%" src="https://i.imgur.com/Omi5Cfn.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/sRpSe7F.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(21)">
+        <img style="top:0%" src="https://i.imgur.com/IRWii4Y.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/CZxyEbF.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(22)">
+        <img style="top:0%" src="https://i.imgur.com/Omi5Cfn.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/axaEFQk.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(23)">
+        <img style="top:0%" src="https://i.imgur.com/Omi5Cfn.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/JQuLF3M.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(24)">
+        <img style="top:0%" src="https://i.imgur.com/IRWii4Y.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/3BYIv0T.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(25)">
+        <img style="top:0%" src="https://i.imgur.com/IRWii4Y.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/9wf0xte.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(26)">
+        <img style="top:0%" src="https://i.imgur.com/Omi5Cfn.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/FY7lExE.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(27)">
+        <img style="top:0%" src="https://i.imgur.com/Omi5Cfn.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/UC2Y04y.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(28)">
+        <img style="top:0%" src="https://i.imgur.com/Omi5Cfn.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/Dd5BngO.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(29)">
+        <img style="top:0%" src="https://i.imgur.com/IRWii4Y.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/BOJnd1L.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(30)">
+        <img style="top:0%" src="https://i.imgur.com/IRWii4Y.png">
+      </button>
+    </div>
+  </div>
+</body>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="https://i.imgur.com/YnqXU1J.png" style="scale: 90%">
+      <button class="btn" onclick="randomLink(31)">
+        <img style="top:0%" src="https://i.imgur.com/IRWii4Y.png">
+      </button>
+    </div>
+  </div>
+</body>
